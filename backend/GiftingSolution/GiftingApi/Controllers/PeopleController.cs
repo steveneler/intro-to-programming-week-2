@@ -1,6 +1,6 @@
 ﻿
 namespace GiftingApi.Controllers;
-
+[ApiController]
 public class PeopleController : ControllerBase
 {
 
@@ -10,6 +10,16 @@ public class PeopleController : ControllerBase
     {
         _personCatalog = personCatalog;
     }
+
+    [HttpPost("/people")]
+    public async Task<ActionResult<PersonItemResponse>> AddPerson([FromBody] PersonCreateRequest request)
+    {
+        // Validate the request
+
+        PersonItemResponse response = await _personCatalog.AddPersonAsync(request);
+        return StatusCode(201, response);
+    }
+
 
 
     // GET /people

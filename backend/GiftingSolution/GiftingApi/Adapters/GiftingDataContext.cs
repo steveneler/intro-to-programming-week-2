@@ -8,5 +8,5 @@ public class GiftingDataContext : DbContext
     {
 
     }
-    public DbSet<PersonEntity> People { get; set; } = null;
+    public DbSet<PersonEntity> People { get; set; } = null!;
 }
