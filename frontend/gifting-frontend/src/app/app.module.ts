@@ -12,6 +12,7 @@ import { PeopleListComponent } from './features/gift-giving/components/people-li
 import {HttpClientModule} from '@angular/common/http';
 import { PersonDataService } from './services/people-data.service';
 import { PeopleEntryComponent } from './features/gift-giving/components/people-entry/people-entry.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PeopleEntryComponent } from './features/gift-giving/components/people-e
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [PersonDataService],
   bootstrap: [AppComponent]
